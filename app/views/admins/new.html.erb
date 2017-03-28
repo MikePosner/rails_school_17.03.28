@@ -1,0 +1,23 @@
+<h1>注册用户</h1>
+<%= form_for @user, url:admins_path do |f| %>
+用户类型
+<%= f.radio_button(:category, "1") %>
+<%= f.label(:category, "管理员") %>
+<%= f.radio_button(:category, "2") %>
+<%= f.label(:category, "老师") %>
+<%= f.radio_button(:category, "3") %>
+<%= f.label(:category, "学生") %>
+	<p>
+		<%= f.label :用户姓名 %>
+		<%= f.text_field :teacher_name %>
+	</p>
+	<p>
+		<%= f.label :所属班级 %>
+		<%= f.text_field :class_name %>
+	</p>
+	<p>
+		<%= f.label :密码 %>
+		<%= f.password_field :password%>
+	</p>
+	<p><%= f.button "提交" %></p>
+<% end %>

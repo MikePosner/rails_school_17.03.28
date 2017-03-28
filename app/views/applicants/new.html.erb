@@ -1,0 +1,23 @@
+<h1>注册账户</h1>
+<%= form_for @user, url: :applicants_create do |f| %>
+用户类型
+<%= f.radio_button(:category, "1") %>
+<%= f.label(:category, "管理员") %>
+<%= f.radio_button(:category, "2") %>
+<%= f.label(:category, "老师") %>
+<%= f.radio_button(:category, "3") %>
+<%= f.label(:category, "学生") %>
+	<p>
+		<%= f.label :用户名 %>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :密码 %>
+		<%= f.password_field :password%>
+	</p>
+	<p>
+		<%= f.label :确认密码 %>
+		<%= f.password_field :password_confirmation %>
+	</p>
+	<p><%= f.button "提交" %></p>
+<% end %>

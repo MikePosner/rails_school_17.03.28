@@ -1,0 +1,19 @@
+<h1>管理系统登录</h1>
+
+<% if flash[:login_error] %>
+  <p><%= flash[:login_error] %></p>
+<% end %>
+
+<%= form_for :session, url: :sessions_login do |f| %>
+
+ 	<p>
+		<%= f.label :用户名 %>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :密码 %>
+		<%= f.password_field :password%>
+	</p>
+	<%= link_to '注册', applicants_new_path %>
+  <p><%= f.button "登录" %></p>
+<% end %>

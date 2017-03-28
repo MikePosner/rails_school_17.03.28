@@ -1,0 +1,14 @@
+<h1>修改普通用户信息</h1>
+<% #debugger %>
+<%= form_for @user,url:general_student_path do |f| %>
+	<p>
+		<%= f.label :学生姓名 %>
+		<%= f.text_field :student_name %>
+	</p>
+	<p>
+		<%= f.label :所属班级 %>
+		<%= f.text_field :class_name %>
+	</p>
+	
+	<p><%= f.button "提交" %></p>
+<% end %>

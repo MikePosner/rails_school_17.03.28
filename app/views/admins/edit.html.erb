@@ -1,0 +1,13 @@
+<h1>修改普通用户信息</h1>
+<%= form_for @user, url:admin_path do |f| %>
+	<p>
+		<%= f.label :用户姓名 %>
+		<%= f.text_field :teacher_name %>
+	</p>
+	<p>
+		<%= f.label :所属班级 %>
+		<%= f.text_field :class_name %>
+	</p>
+	
+	<p><%= f.button "提交" %></p>
+<% end %>

@@ -1,0 +1,17 @@
+<h4>学生操作平台</h4>
+ <p>当前登录用户:<%= @user.name %></p>
+<table>
+	<tr>
+		<th>班级</th>
+		<th>学生姓名</th>
+		<th>所属老师</th>
+		<th>操作</th>
+	</tr>
+	<tr>
+		<td><%= @user.class_name %></td>
+		<td><%= @user.student_name %></td>
+		<td><%= @teacher_name %></td>
+		<td><%= link_to '修改个人信息', edit_general_student_path %></td>
+	</tr>
+	
+</table>
