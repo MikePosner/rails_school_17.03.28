@@ -1,9 +1,8 @@
 <h1>修改普通用户信息</h1>
-<% #debugger %>
 <%= form_for @user,url:general_teacher_path do |f| %>
 	<p>
 		<%= f.label :教师姓名 %>
-		<%= f.text_field :teacher_name %>
+		<%= f.text_field :name %>
 	</p>
 	<p>
 		<%= f.label :所属班级 %>

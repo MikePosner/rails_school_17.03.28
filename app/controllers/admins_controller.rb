@@ -5,8 +5,9 @@ class AdminsController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # @user.password_digest = '1234'
-    if @user.save
+    @room=Room.new(room_params[:rooms])
+    if @user.save&&@room.save
+      @user.rooms << @room
       redirect_to :admins_show
     else
       render new_admin_path
@@ -38,7 +39,16 @@ class AdminsController < ApplicationController
   end
 
   private
+
     def user_params
-      params.require(:user).permit(:teacher_name,:class_name,:category,:password)
+      params.require(:user).permit(:name,:category,:password)
+      # params.permit(user:[:name,{rooms: :room_name},:category,:password])
     end
+
+    def room_params
+      # params.permit(user:[rooms: :room_name])
+      params.require(:user).permit(rooms: :name)
+    end
+
+
 end

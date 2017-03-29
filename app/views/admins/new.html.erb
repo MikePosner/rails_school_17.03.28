@@ -6,18 +6,18 @@
 <%= f.radio_button(:category, "2") %>
 <%= f.label(:category, "老师") %>
 <%= f.radio_button(:category, "3") %>
-<%= f.label(:category, "学生") %>
-	<p>
+<%= f.label(:category, "学生") %><br>
+	
 		<%= f.label :用户姓名 %>
-		<%= f.text_field :teacher_name %>
-	</p>
-	<p>
-		<%= f.label :所属班级 %>
-		<%= f.text_field :class_name %>
-	</p>
-	<p>
+		<%= f.text_field :name %>
+	<br>
+	<%= f.fields_for :rooms do |r| %>
+			<%= r.label :所属班级 %>
+			<%= r.text_field :name %>
+	<% end %>
+	<br>
 		<%= f.label :密码 %>
 		<%= f.password_field :password%>
-	</p>
-	<p><%= f.button "提交" %></p>
+	<br>
+	<%= f.button "提交" %>
 <% end %>

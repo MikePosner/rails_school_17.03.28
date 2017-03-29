@@ -1,5 +1,6 @@
 <h4>老师操作平台</h4>
  <p>当前登录用户:<%= @user.name %></p>
+ <%= link_to '退出当前登录', root_path  %>
 <table>
 	<tr>
 		<th>班级</th>
@@ -9,7 +10,7 @@
 	</tr>
 	<tr>
 		<td><%= @user.class_name %></td>
-		<td><%= @user.teacher_name %></td>
+		<td><%= @user.name %></td>
 		<td><%= @student_name %></td>
 		<td><%= link_to '修改个人信息', edit_general_teacher_path %></td>
 	</tr>

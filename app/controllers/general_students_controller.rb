@@ -9,16 +9,14 @@ class GeneralStudentsController < ApplicationController
 		@teacher=User.where category:2
 		@teacher_name=""
 		# @teacher.each{|t| @teacher_name << t.teacher_name}
-		@teacher.size>=1?@teacher_name=@teacher.map(&:teacher_name).join('、'):@teacher_name=@teacher.teacher_name
+		@teacher.size>=1?@teacher_name=@teacher.map(&:name).join('、'):@teacher_name=@teacher.name
 	end
 
 	def edit
-		# debugger
 		 @user = User.find(session[:user]['id'])
 	end
 
 	def update
-		# debugger
     	@user = User.find(session[:user]['id'])
 		if @user.update(user_params)
 			session[:user] = @user
@@ -30,6 +28,6 @@ class GeneralStudentsController < ApplicationController
 
 	private
     	def user_params
-      		params.require(:user).permit(:student_name,:class_name)
+      		params.require(:user).permit(:name,:class_name)
     	end
 end

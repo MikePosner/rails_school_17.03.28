@@ -9,7 +9,7 @@ class GeneralTeachersController < ApplicationController
 		@user = User.new session[:user]
 		@student=User.where category:3
 		@student_name=""
-		@student.size>=1?@student_name=@student.map(&:student_name).join('、'):@student_name=@student.student_name
+		@student.size>=1?@student_name=@student.map(&:name).join('、'):@student_name=@student.name
 	end
 
 	def edit
@@ -30,6 +30,6 @@ class GeneralTeachersController < ApplicationController
 
 	private
     	def user_params
-      		params.require(:user).permit(:teacher_name,:class_name)
+      		params.require(:user).permit(:name,:class_name)
     	end
 end

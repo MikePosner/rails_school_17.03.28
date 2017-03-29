@@ -1,17 +1,22 @@
 <h4>管理员操作平台</h4>
  <p>当前登录用户:<%= @user.name %></p>
 <%= link_to '新建用户', new_admin_path  %>
+<%= link_to '退出当前登录', root_path  %>
 <table>
 	<tr>
 		<th>班级</th>
-		<th>老师</th>
+		<th>用户名</th>
 		<th>操作</th>
 	</tr>
 	
 	<% @users.each do |user| %>
 		<tr>
-			<td><%= user.class_name %></td>
-			<td><%= user.teacher_name %></td>
+			<% if !user.rooms.empty? %>
+				<td><%= user.rooms.first.name %></td>
+			<% else %>
+			<td>nono</td>
+			<% end %>
+			<td><%= user.name %></td>
 			<td><%= link_to '修改用户', edit_admin_path(user) %></td>
 			<td><%= link_to '删除用户', admin_path(user), method: :delete, data: { confirm: '你确定要删除这个用户?' } %>
 				
