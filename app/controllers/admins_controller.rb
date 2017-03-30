@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+
   def new
    @user = User.new
   end
@@ -20,11 +21,13 @@ class AdminsController < ApplicationController
 
   def show
     @user = User.new session[:user]
-    @users=User.all
+    @users = User.all
   end
 
   def update
      @user = User.find(params[:id])
+     @room = Room.where(name:@user.rooms.first.name)
+     @room.update(room_params[:rooms])
     if @user.update(user_params)
       redirect_to admin_path
     else

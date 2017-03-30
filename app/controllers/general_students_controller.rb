@@ -5,7 +5,7 @@ class GeneralStudentsController < ApplicationController
 	end
 
 	def show
-		@user = User.new session[:user]
+		@user = User.find session[:user]['id']
 		@teacher=User.where category:2
 		@teacher_name=""
 		# @teacher.each{|t| @teacher_name << t.teacher_name}
@@ -18,6 +18,8 @@ class GeneralStudentsController < ApplicationController
 
 	def update
     	@user = User.find(session[:user]['id'])
+    	@room = Room.where(name:@user.rooms.first.name)
+    	@room.update(room_params[:rooms])
 		if @user.update(user_params)
 			session[:user] = @user
       		redirect_to :general_students_show
@@ -27,7 +29,15 @@ class GeneralStudentsController < ApplicationController
 	end
 
 	private
-    	def user_params
-      		params.require(:user).permit(:name,:class_name)
-    	end
+
+    def user_params
+      params.require(:user).permit(:name,:category,:password)
+      # params.permit(user:[:name,{rooms: :room_name},:category,:password])
+    end
+
+    def room_params
+      # params.permit(user:[rooms: :room_name])
+      params.require(:user).permit(rooms: :name)
+    end
+    
 end

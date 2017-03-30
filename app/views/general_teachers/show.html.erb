@@ -9,7 +9,11 @@
 		<th>操作</th>
 	</tr>
 	<tr>
-		<td><%= @user.class_name %></td>
+		<% if !@user.rooms.empty? %>
+			<td><%= @user.rooms.first.name %></td>
+		<% else %>
+			<td>暂无班级信息</td>
+		<% end %>
 		<td><%= @user.name %></td>
 		<td><%= @student_name %></td>
 		<td><%= link_to '修改个人信息', edit_general_teacher_path %></td>

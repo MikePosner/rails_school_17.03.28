@@ -14,7 +14,7 @@
 			<% if !user.rooms.empty? %>
 				<td><%= user.rooms.first.name %></td>
 			<% else %>
-			<td>nono</td>
+				<td>暂无班级信息</td>
 			<% end %>
 			<td><%= user.name %></td>
 			<td><%= link_to '修改用户', edit_admin_path(user) %></td>

@@ -5,8 +5,10 @@
 		<%= f.text_field :name %>
 	</p>
 	<p>
-		<%= f.label :所属班级 %>
-		<%= f.text_field :class_name %>
+		<%= f.fields_for :rooms do |r| %>
+		<%= r.label :所属班级 %>
+		<%= r.text_field (:name) %>
+	<% end %>
 	</p>
 	
 	<p><%= f.button "提交" %></p>

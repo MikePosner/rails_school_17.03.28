@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  
-  def new 
-  end
 
 	def login
 		@user = User.find_by(name: user_params[:name]).try(:authenticate, user_params[:password])
@@ -23,6 +20,7 @@ class SessionsController < ApplicationController
  	end
 
  	private
+  
   	def user_params
    		params.require(:session).permit(:name, :password)
   	end
