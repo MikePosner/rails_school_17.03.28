@@ -1,3 +1,51 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	font-family: PmingLiu;
+	font-size: 28px;
+ }
+
+.back{
+	background-image: url("313051-106.jpg");
+	background-repeat: no-repeat;
+    height:800px;
+    -webkit-filter: blur(4px);
+  }
+
+  .content{
+  	position: absolute;
+  	top: 130px;
+  	left: 700px;	
+  }
+
+  button{
+ 	border:10px double #708090;
+    width:180px;
+    height:60px;
+    border-radius:45px;
+    position: absolute;
+  	top: 223px;
+  	left: 200px;
+  	background-color: #8FBC8F;
+  	font-size: 28px;
+  	font-family: PmingLiu;
+  }
+
+  a{
+  	text-decoration:none;
+  	color: #708090;
+  	position: absolute;
+  	top: 237px;
+  	left: 38px;
+  }
+
+  .a{
+  	border:10px double #708090;
+    width:155px;
+    height:40px;
+    border-radius:45px;
+    background-color: #8FBC8F;
+  }
+
+  input{
+  	background-color: #8FBC8F;
+  	border-radius:45px;
+  }

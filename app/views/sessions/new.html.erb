@@ -1,19 +1,25 @@
-<h1>管理系统登录</h1>
+<div class="container">
+  <div class="back"></div>
+  <div class="content">
+    <h3>System login</h3>
 
-<% if flash[:login_error] %>
-  <p><%= flash[:login_error] %></p>
-<% end %>
+    <% if flash[:login_error] %>
+      <p><%= flash[:login_error] %></p>
+    <% end %>
 
-<%= form_for :session, url: :sessions_login do |f| %>
+    <%= form_for :session, url: :sessions_login do |f| %>
 
- 	<p>
-		<%= f.label :用户名 %>
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :密码 %>
-		<%= f.password_field :password%>
-	</p>
-	<%= link_to '注册', applicants_new_path %>
-  <p><%= f.button "登录" %></p>
-<% end %>
+     	<p>
+    		<%= f.label :Name %>
+    		<%= f.text_field :name %>
+    	</p>
+    	<p>
+    		<%= f.label :Word %>
+    		<%= f.password_field :password%>
+    	</p>
+    	<div class="a"><%= link_to 'Register', applicants_new_path %></div>
+      <%= f.button "Login" %>
+    <% end %>
+  </div>
+
+</div>
