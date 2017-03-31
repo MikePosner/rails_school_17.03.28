@@ -1,23 +1,30 @@
 body {
+  width: 100%;
+  height:100%;
 	font-family: PmingLiu;
 	font-size: 28px;
+  -webkit-filter: blur(0.1px);
+  color:#7fecad;
+  margin:0px;
  }
 
 .back{
 	background-image: url("313051-106.jpg");
 	background-repeat: no-repeat;
-    height:800px;
-    -webkit-filter: blur(4px);
+  background-size: 2000px 900px;
+  height:1000px;
+  width: 600rx; 
+  -webkit-filter: blur(3px);
   }
 
   .content{
   	position: absolute;
-  	top: 130px;
-  	left: 700px;	
+  	top: 195px;
+  	left: 1150px;	
   }
 
   button{
- 	border:10px double #708090;
+ 	  border:10px double #708090;
     width:180px;
     height:60px;
     border-radius:45px;
@@ -42,6 +49,7 @@ body {
     width:155px;
     height:40px;
     border-radius:45px;
+    font-size: 27px;
     background-color: #8FBC8F;
   }
 
