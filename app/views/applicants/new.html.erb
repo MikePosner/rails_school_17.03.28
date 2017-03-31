@@ -1,23 +1,85 @@
-<h1>注册账户</h1>
-<%= form_for @user, url: :applicants_create do |f| %>
-用户类型
-<%= f.radio_button(:category, "1") %>
-<%= f.label(:category, "管理员") %>
-<%= f.radio_button(:category, "2") %>
-<%= f.label(:category, "老师") %>
-<%= f.radio_button(:category, "3") %>
-<%= f.label(:category, "学生") %>
-	<p>
-		<%= f.label :用户名 %>
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :密码 %>
-		<%= f.password_field :password%>
-	</p>
-	<p>
-		<%= f.label :确认密码 %>
-		<%= f.password_field :password_confirmation %>
-	</p>
-	<p><%= f.button "提交" %></p>
-<% end %>
+<%= image_tag "timg.jpeg" %>
+<div class="container">	
+	<h3>注册账户</h3>
+	<%= form_for @user, url: :applicants_create do |f| %>
+		用户类型
+		<%= f.radio_button(:category, "1") %>
+		<%= f.label(:category, "管理员") %>
+		<%= f.radio_button(:category, "2") %>
+		<%= f.label(:category, "老师") %>
+		<%= f.radio_button(:category, "3") %>
+		<%= f.label(:category, "学生") %>
+		<p>
+			<%= f.label :用户名 %>
+			<%= f.text_field :name %>
+		</p>
+		<p>
+			<%= f.label :密码 %>
+			<%= f.password_field :password%>
+		</p>
+		<p>
+			<%= f.label :确认密码 %>
+			<%= f.password_field :password_confirmation %>
+		</p>
+		<p><%= f.button "提交" %></p>
+	<% end %>
+</div>
+
+<style type="text/css">
+
+body {
+  width: 1839px;
+  height:800px;
+  font-family: PmingLiu;
+  /*font-style: italic;*/
+  font-size: 28px;
+  text-shadow:8px 6px 5px #0c8918;
+  -webkit-filter: blur(0.1px);
+  color:#424c50;
+  margin:0px;
+ }
+
+img{
+  background-image: url("timg.jpeg");
+  background-repeat: no-repeat;
+  background-size: 2000px 900px;
+  height:800px;
+  width: 100%; 
+  -webkit-filter: blur(0px);
+  }
+
+.container{
+	position: absolute;
+    top: 35px;
+    left: 150px; 
+    width: 470px;
+}
+
+input{
+	background-color: #bbcdc5;
+	box-shadow: 8px 4px 2px #21a675;
+}
+
+input radio{
+	background-color: #bbcdc5;
+}
+
+button{
+	width:100%;
+	box-shadow: 6px 4px 2px #21a675;
+	background:transparent;
+	color:#fff
+	background-color: #c0edb7,0.5;
+	border-radius:15px;
+}
+
+p label{
+}
+
+p input{
+	float:right;
+	text-align:right;
+	border-radius:15px;
+}
+
+</style>
