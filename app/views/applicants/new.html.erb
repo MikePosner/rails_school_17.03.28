@@ -14,6 +14,12 @@
 		<%= f.text_field :name %>
 	</p>
 	<p>
+		<%= f.fields_for :rooms do |r| %>
+		<%= r.label :所属班级 %>
+		<%= r.text_field :name %>
+<% end %>
+	</p>
+	<p>
 		<%= f.label :密码 %>
 		<%= f.password_field :password%>
 	</p>
@@ -71,9 +77,6 @@
 		color:#fff
 		background-color: #c0edb7,0.5;
 		border-radius:15px;
-	}
-
-	p label{
 	}
 
 	p input{

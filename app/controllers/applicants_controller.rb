@@ -5,8 +5,10 @@ class ApplicantsController < ApplicationController
   end
 
   def create
-  	@user = User.create(user_params)
-  	if @user.save
+  	@user = User.new(user_params)
+    @room=Room.new(room_params[:rooms])
+  	if @user.save&&@room.save
+      @user.rooms << @room
   		redirect_to :sessions_new
   	else
   		render "new"
@@ -15,8 +17,12 @@ class ApplicantsController < ApplicationController
 
   private 
 
-  def user_params
-  	params.require(:user).permit(:name,:password,:password_confirmation,:category)
-  end
+    def user_params
+      params.require(:user).permit(:name,:category,:password,:password_confirmation)
+    end
+
+    def room_params
+     params.require(:user).permit(rooms: :name)
+    end
   
 end

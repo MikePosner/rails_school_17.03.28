@@ -3,9 +3,11 @@
 	<h3>Administrator operation platform</h3>
 	<p>Here you can find all the teachers and students information, and its management</p>
 </div>
-<%= link_to '新建用户', new_admin_path  %>
-<%= link_to '退出当前登录', root_path  %>
-<p>当前登录用户:<%= @user.name %></p>		
+<div class="right">
+	当前登录用户:<%= @user.name %>
+	<%= link_to '新建用户', :applicants_new  %>
+	<%= link_to '退出当前登录', root_path  %>	
+</div>
 <div class="hexagon icon"></div>
 <div class="hexagon icon"></div>
 <div class="hexagon icon"></div>
@@ -14,7 +16,7 @@
 		<tr>
 			<th>班级</th>
 			<th>用户名</th>
-			<th>操作</th>
+			<th colspan="2">操作</th>
 		</tr>
 		<% @users.each do |user| %>
 		<tr>
@@ -24,8 +26,8 @@
 			<td>暂无班级信息</td>
 			<% end %>
 			<td><%= user.name %></td>
-			<td><%= link_to 'modifyUser', edit_admin_path(user) %></td>
-			<td><%= link_to '删除用户', admin_path(user), method: :delete, data: { confirm: '你确定要删除这个用户?' } %></td>
+			<td><%= link_to 'modify', edit_admin_path(user) %></td>
+			<td><%= link_to 'delete', admin_path(user), method: :delete, data: { confirm: '你确定要删除这个用户?' } %></td>
 		</tr>
 		<% end %>
 	</table>
@@ -53,10 +55,10 @@
 
 	.container{
 		color: #4c8dae;
-		width: 600px;
+		width: 910px;
 		position: absolute;
 		top: 550px;
-		left: 650px; 
+		left: 550px; 
 	}
 
 	.text{
@@ -65,7 +67,7 @@
 		font-family: Georgia;
 		position: absolute;
 		top: 130px;
-		left:600px;
+		left:550px;
 		text-align: center;
 	}
 
@@ -75,11 +77,37 @@
 	}
 
 	.icon{
+		text-align: center;
 		margin-left: 180px;
 		float: right;
 		position: absolute;
-		top: -135px;
+		top: -30px;
 		left: -650px;
+	}
+
+	.right{
+		width: 100%;
+		color: #a1afc9;
+		float:right;
+		position: absolute;
+		top:15px;
+		left: 30px;
+	}
+
+	.right a{
+		color: #a1afc9;
+	}
+
+	tbody{
+		text-align: center;
+	}
+
+	th{
+		width: 200px;
+	}
+
+	td{
+		padding-top: 15px;
 	}
 
 	.hexagon {
@@ -88,6 +116,7 @@
 		background: #00e079;
 		position: relative;
 	}
+
 	.hexagon:before {
 		content: "";
 		position: absolute;
@@ -99,6 +128,7 @@
 		border-right: 50px solid transparent;
 		border-bottom: 25px solid #00e079;
 	}
+
 	.hexagon:after {
 		content: "";
 		position: absolute;
@@ -110,4 +140,5 @@
 		border-right: 50px solid transparent;
 		border-top: 25px solid #00e079;
 	} 
+
 </style>
