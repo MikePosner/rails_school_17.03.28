@@ -17,97 +17,97 @@
 			<th>操作</th>
 		</tr>
 		<% @users.each do |user| %>
-			<tr>
-				<% if !user.rooms.empty? %>
-					<td><%= user.rooms.first.name %></td>
-				<% else %>
-					<td>暂无班级信息</td>
-				<% end %>
-				<td><%= user.name %></td>
-				<td><%= link_to 'modifyUser', edit_admin_path(user) %></td>
-				<td><%= link_to '删除用户', admin_path(user), method: :delete, data: { confirm: '你确定要删除这个用户?' } %></td>
-			</tr>
+		<tr>
+			<% if !user.rooms.empty? %>
+			<td><%= user.rooms.first.name %></td>
+			<% else %>
+			<td>暂无班级信息</td>
+			<% end %>
+			<td><%= user.name %></td>
+			<td><%= link_to 'modifyUser', edit_admin_path(user) %></td>
+			<td><%= link_to '删除用户', admin_path(user), method: :delete, data: { confirm: '你确定要删除这个用户?' } %></td>
+		</tr>
 		<% end %>
 	</table>
 </div>
 <style type="text/css">
 
-body {
-  width: 1840px;
-  height:800px;
-  font-family: PmingLiu;
-  font-size: 28px;
-  -webkit-filter: blur(0.1px);
-  color:#3d3b4f;
-  margin:0px;
-  background-color: #f0f0f4;
- }
+	body {
+		width: 1840px;
+		height:800px;
+		font-family: PmingLiu;
+		font-size: 28px;
+		-webkit-filter: blur(0.1px);
+		color:#3d3b4f;
+		margin:0px;
+		background-color: #f0f0f4;
+	}
 
-img{
-  width: 1839px;
-  height:450px;
-  background-image: url("17331.jpg");
-  background-repeat: no-repeat;
-  -webkit-filter: brightness(70%);
- }
+	img{
+		width: 1839px;
+		height:450px;
+		background-image: url("17331.jpg");
+		background-repeat: no-repeat;
+		-webkit-filter: brightness(70%);
+	}
 
-.container{
-	color: #4c8dae;
-    width: 600px;
-	position: absolute;
-    top: 550px;
-    left: 650px; 
-}
+	.container{
+		color: #4c8dae;
+		width: 600px;
+		position: absolute;
+		top: 550px;
+		left: 650px; 
+	}
 
-.text{
-	width: 650px;
-	color: #f2ecde;
-	font-family: Georgia;
-	position: absolute;
-    top: 130px;
-    left:600px;
-    text-align: center;
-}
+	.text{
+		width: 650px;
+		color: #f2ecde;
+		font-family: Georgia;
+		position: absolute;
+		top: 130px;
+		left:600px;
+		text-align: center;
+	}
 
-a{
-	text-decoration:none;
-	color: #4c8dae;
-}
+	a{
+		text-decoration:none;
+		color: #4c8dae;
+	}
 
-.icon{
-	margin-left: 180px;
-	float: right;
-	position: absolute;
-    top: -135px;
-    left: -650px;
-}
+	.icon{
+		margin-left: 180px;
+		float: right;
+		position: absolute;
+		top: -135px;
+		left: -650px;
+	}
 
-.hexagon {
-width: 100px;
-height: 55px;
-background: #00e079;
-position: relative;
-}
-.hexagon:before {
-content: "";
-position: absolute;
-top: -25px;
-left: 0;
-width: 0;
-height: 0;
-border-left: 50px solid transparent;
-border-right: 50px solid transparent;
-border-bottom: 25px solid #00e079;
-}
-.hexagon:after {
-content: "";
-position: absolute;
-bottom: -25px;
-left: 0;
-width: 0;
-height: 0;
-border-left: 50px solid transparent;
-border-right: 50px solid transparent;
-border-top: 25px solid #00e079;
-} 
+	.hexagon {
+		width: 100px;
+		height: 55px;
+		background: #00e079;
+		position: relative;
+	}
+	.hexagon:before {
+		content: "";
+		position: absolute;
+		top: -25px;
+		left: 0;
+		width: 0;
+		height: 0;
+		border-left: 50px solid transparent;
+		border-right: 50px solid transparent;
+		border-bottom: 25px solid #00e079;
+	}
+	.hexagon:after {
+		content: "";
+		position: absolute;
+		bottom: -25px;
+		left: 0;
+		width: 0;
+		height: 0;
+		border-left: 50px solid transparent;
+		border-right: 50px solid transparent;
+		border-top: 25px solid #00e079;
+	} 
 </style>
