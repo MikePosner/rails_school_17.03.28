@@ -17,12 +17,12 @@ class SessionsController < ApplicationController
       flash.now[:login_error] = "invalid username or password"
       render "new"
     end
- 	end
+  end
 
- 	private
+  private
   
-  	def user_params
-   		params.require(:session).permit(:name, :password)
-  	end
-    
+  def user_params
+   params.require(:session).permit(:name, :password)
+ end
+
 end
