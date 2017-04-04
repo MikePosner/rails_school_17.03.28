@@ -1,22 +1,79 @@
-<h4>学生操作平台</h4>
- <p>当前登录用户:<%= @user.name %></p>
- <%= link_to '退出当前登录', root_path  %>
-<table>
-	<tr>
-		<th>班级</th>
-		<th>学生姓名</th>
-		<th>所属老师</th>
-		<th>操作</th>
-	</tr>
-	<tr>
-		<% if !@user.rooms.empty? %>
-			<td><%= @user.rooms.first.name %></td>
-		<% else %>
-			<td>暂无班级信息</td>
-		<% end %>
-		<td><%= @user.name %></td>
-		<td><%= @teacher_name %></td>
-		<td><%= link_to '修改个人信息', edit_general_student_path %></td>
-	</tr>
+<div class="big-background">
+	<%= image_tag "17044.jpg" %>
+</div>
+<div class="container">
+	<%= image_tag "17044.jpg" %>
+	<div class="content">
+		<table>
+			<tr>
+				<th>班级</th>
+				<th>学生姓名</th>
+				<th>所属老师</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<% if !@user.rooms.empty? %>
+					<td><%= @user.rooms.first.name %></td>
+				<% else %>
+					<td>暂无班级信息</td>
+				<% end %>
+				<td><%= @user.name %></td>
+				<td><%= @teacher_name %></td>
+				<td><%= link_to '修改个人信息', edit_general_student_path %></td>
+			</tr>
 	
-</table>
+		</table>
+	</div>
+</div>
+<style type="text/css">
+
+	body {
+		width: 1840px;
+		height:800px;
+		font-family: PmingLiu;
+		font-size: 28px;
+		-webkit-filter: blur(0.1px);
+		color:#1685a9;
+		margin:0px;
+		background-color: #f0f0f4;
+	}
+
+	.big-background img{
+		background-image: url("17044.jpg");
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+	}
+
+	.container{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 45%;
+		height: 45%;
+	}
+
+	.container img{
+		background-image: url("17044.jpg");
+		background-repeat: no-repeat;
+		-webkit-filter: brightness(70%);
+		-webkit-filter: blur(3px);
+		width: 100%;
+		height: 100%;
+	}
+
+	.content{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0px;
+		top: 100px;
+	}
+
+	a{
+    text-decoration:none;
+    color: #1685a9;
+  }
+
+
+</style>
