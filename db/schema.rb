@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20170329063421) do
     t.string   "name"
     t.string   "password_digest"
     t.integer  "category"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "type"
   end
 
