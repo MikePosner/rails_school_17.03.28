@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       elsif @user.category == 3
         redirect_to :general_students_show
       else
-        render "new"
+        render "ne23w"
       end
     else
       flash.now[:login_error] = "invalid username or password"
@@ -20,9 +20,9 @@ class SessionsController < ApplicationController
   end
 
   private
-  
+
   def user_params
-   params.require(:session).permit(:name, :password)
- end
+    params.require(:session).permit(:name, :password)
+  end
 
 end
