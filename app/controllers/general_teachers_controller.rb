@@ -31,12 +31,17 @@ class GeneralTeachersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:name,:category,:password)
-      # params.permit(user:[:name,{rooms: :room_name},:category,:password])
-    end
+		# params.permit(user:[:name,{rooms: :room_name},:category,:password])
+	end
 
-    def room_params
-      # params.permit(user:[rooms: :room_name])
-      params.require(:user).permit(rooms: :name)
-    end
-    
-  end
+	def room_params
+			# params.permit(user:[rooms: :room_name])
+			params.require(:user).permit(rooms: :name)
+		end
+		
+	end
+
+
+
+
+
