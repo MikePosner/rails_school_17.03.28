@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
-	def login
-		@user = User.find_by(name: user_params[:name]).try(:authenticate, user_params[:password])
+  def login
+    @user = User.find_by(name: user_params[:name]).try(:authenticate, user_params[:password])
     if @user
       session[:user] = @user
       if @user.category == 1

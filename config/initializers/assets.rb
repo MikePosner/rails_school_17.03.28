@@ -9,3 +9,11 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( sessions_login.css )
+Rails.application.config.assets.precompile += %w( applicants_register.css )
+Rails.application.config.assets.precompile += %w( admins_show.css )
+Rails.application.config.assets.precompile += %w( admins_edit.css )
+Rails.application.config.assets.precompile += %w( teachers_show.css )
+Rails.application.config.assets.precompile += %w( teachers_edit.css )
+Rails.application.config.assets.precompile += %w( students_show.css )
+Rails.application.config.assets.precompile += %w( students_edit.css )

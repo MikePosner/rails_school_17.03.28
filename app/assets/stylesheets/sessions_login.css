@@ -1,0 +1,60 @@
+
+  body {
+    width: 1839px;
+    height:800px;
+    font-family: PmingLiu;
+    font-size: 28px;
+    -webkit-filter: blur(0.1px);
+    color:#7fecad;
+    margin:0px;
+  }
+
+  img{
+    background-image: url("313051-106.jpg");
+    background-repeat: no-repeat;
+    background-size: 2000px 900px;
+    height:800px;
+    width: 100%; 
+    -webkit-filter: blur(3px);
+  }
+
+  .content{
+    position: absolute;
+    top: 195px;
+    left: 1150px; 
+  }
+
+  button{
+    border:10px double #708090;
+    width:180px;
+    height:60px;
+    border-radius:45px;
+    position: absolute;
+    top: 223px;
+    left: 200px;
+    background-color: #8FBC8F;
+    font-size: 28px;
+    font-family: PmingLiu;
+  }
+
+  a{
+    text-decoration:none;
+    color: #708090;
+    position: absolute;
+    top: 237px;
+    left: 38px;
+  }
+
+  .a{
+    border:10px double #708090;
+    width:155px;
+    height:40px;
+    border-radius:45px;
+    font-size: 27px;
+    background-color: #8FBC8F;
+  }
+
+  input{
+    background-color: #8FBC8F;
+    border-radius:45px;
+  }

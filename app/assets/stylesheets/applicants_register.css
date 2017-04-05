@@ -1,0 +1,52 @@
+
+	body {
+		width: 1839px;
+		height:800px;
+		font-family: PmingLiu;
+		font-size: 28px;
+		text-shadow:8px 6px 5px #0c8918;
+		-webkit-filter: blur(0.1px);
+		color:#424c50;
+		margin:0px;
+	}
+
+	img{
+		background-image: url("timg.jpeg");
+		background-repeat: no-repeat;
+		background-size: 2000px 900px;
+		height:800px;
+		width: 100%; 
+		-webkit-filter: blur(0px);
+	}
+
+	.container{
+		position: absolute;
+		top: 35px;
+		left: 150px; 
+		width: 470px;
+	}
+
+	input{
+		background-color: #bbcdc5;
+		box-shadow: 8px 4px 2px #21a675;
+	}
+
+	input radio{
+		background-color: #bbcdc5;
+	}
+
+	button{
+		width:100%;
+		box-shadow: 6px 4px 2px #21a675;
+		background:transparent;
+		color:#fff
+		background-color: #c0edb7,0.5;
+		border-radius:15px;
+	}
+
+	p input{
+		float:right;
+		text-align:right;
+		border-radius:15px;
+	}
+
