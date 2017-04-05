@@ -1,6 +1,6 @@
 class GeneralTeachersController < ApplicationController
 
-  def new 
+  def new
     @user=User.new
   end
 
@@ -39,8 +39,3 @@ class GeneralTeachersController < ApplicationController
       params.require(:user).permit(rooms: :name)
     end
   end
-
-
-
-
-
