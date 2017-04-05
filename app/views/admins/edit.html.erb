@@ -1,33 +1,30 @@
 <%= stylesheet_link_tag "admins_edit" %>
 <%= image_tag "17331.jpg" %>
 <div class="text">
-	<h3>Administrator operation platform</h3>
-	<p>Here you can find all the teachers and students information, and its management</p>
+  <h3>Administrator operation platform</h3>
+  <p>Here you can find all the teachers and students information, and its management</p>
 </div>
 <div class="right">
-	<%= link_to '退出当前登录', root_path  %>	
+  <%= link_to '退出当前登录', root_path  %>
 </div>
 <div class="hexagon icon"></div>
 <div class="hexagon icon"></div>
 <div class="hexagon icon"></div>
 <div class="container">
-		<%= form_for @user, url:admin_path do |f| %>
-			<div class="for">
-			<p>
-				<%= f.label :user %>
-				<%= f.text_field :name %>
-			</p>
-			<p>
-				<%= f.fields_for :rooms do |r| %>
-					<%= r.label :class %>
-					<%= r.text_field (:name) %>
-				<% end %>
-			</p>
-			</div>
-			<%= f.button "提交" %> 
+  <%= form_for @user, url:admin_path do |f| %>
+  <div class="for">
+    <p>
+      <%= f.label :user %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.fields_for :rooms do |r| %>
+        <%= r.label :class %>
+        <%= r.text_field (:name) %>
+      <% end %>
+    </p>
+  </div>
+  <%= f.button "提交" %>
 
-		<% end %>
+  <% end %>
 </div>
-
-
-

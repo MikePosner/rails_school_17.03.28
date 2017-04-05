@@ -1,28 +1,28 @@
 <%= stylesheet_link_tag "students_show" %>
 <div class="big-background">
-	<%= image_tag "17044.jpg" %>
+  <%= image_tag "17044.jpg" %>
 </div>
 <div class="container">
-	<%= image_tag "17044.jpg" %>
-	<div class="content">
-		<table>
-			<tr>
-				<th>班级</th>
-				<th>学生姓名</th>
-				<th>所属老师</th>
-				<th>操作</th>
-			</tr>
-			<tr>
-				<% if !@user.rooms.empty? %>
-					<td><%= @user.rooms.first.name %></td>
-				<% else %>
-					<td>暂无班级信息</td>
-				<% end %>
-				<td><%= @user.name %></td>
-				<td><%= @teacher_name %></td>
-				<td><%= link_to '修改个人信息', edit_general_student_path %></td>
-			</tr>
-	
-		</table>
-	</div>
+  <%= image_tag "17044.jpg" %>
+  <div class="content">
+    <table>
+      <tr>
+        <th>班级</th>
+        <th>学生姓名</th>
+        <th>所属老师</th>
+        <th>操作</th>
+      </tr>
+      <tr>
+        <% if !@user.rooms.empty? %>
+        <td><%= @user.rooms.first.name %></td>
+        <% else %>
+        <td>暂无班级信息</td>
+        <% end %>
+        <td><%= @user.name %></td>
+        <td><%= @teacher_name %></td>
+        <td><%= link_to '修改个人信息', edit_general_student_path %></td>
+      </tr>
+
+    </table>
+  </div>
 </div>

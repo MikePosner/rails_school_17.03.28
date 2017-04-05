@@ -1,23 +1,22 @@
 <%= stylesheet_link_tag "teachers_edit" %>
 <div class="big-background">
-	<%= image_tag "170432.jpg" %>
+  <%= image_tag "170432.jpg" %>
 </div>
 <div class="container">
-	<%= image_tag "170433.jpg" %>
-	<div class="content">
-			<%= form_for @user,url:general_teacher_path do |f| %>
-			<p>
-				<%= f.label :教师姓名 %>
-				<%= f.text_field :name %>
-			</p>
-			<p>
-				<%= f.fields_for :rooms do |r| %>
-					<%= r.label :所属班级 %>
-					<%= r.text_field (:name) %>
-				<% end %>
-			</p>
-			<p><%= f.button "提交" %></p>
-		<% end %>
-	</div>
+  <%= image_tag "170433.jpg" %>
+  <div class="content">
+    <%= form_for @user,url:general_teacher_path do |f| %>
+    <p>
+      <%= f.label :教师姓名 %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.fields_for :rooms do |r| %>
+        <%= r.label :所属班级 %>
+        <%= r.text_field (:name) %>
+      <% end %>
+    </p>
+    <p><%= f.button "提交" %></p>
+    <% end %>
+  </div>
 </div>
-

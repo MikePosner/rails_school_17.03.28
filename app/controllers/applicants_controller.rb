@@ -1,11 +1,11 @@
 class ApplicantsController < ApplicationController
 
   def new
-  	@user = User.new
+    @user = User.new
   end
 
   def create
-  	@user = User.new(user_params)
+    @user = User.new(user_params)
     @room=Room.new(room_params[:rooms])
     if @user.save&&@room.save
       @user.rooms << @room
@@ -15,14 +15,12 @@ class ApplicantsController < ApplicationController
     end
   end
 
-  private 
+  private
+    def user_params
+      params.require(:user).permit(:name,:category,:password,:password_confirmation)
+    end
 
-  def user_params
-    params.require(:user).permit(:name,:category,:password,:password_confirmation)
-  end
-
-  def room_params
-   params.require(:user).permit(rooms: :name)
- end
-
+    def room_params
+      params.require(:user).permit(rooms: :name)
+    end
 end
