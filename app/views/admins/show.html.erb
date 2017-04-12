@@ -12,24 +12,10 @@
 <div class="hexagon icon"></div>
 <div class="hexagon icon"></div>
 <div class="hexagon icon"></div>
-<div class="container">
-  <table>
-    <tr>
-      <th>班级</th>
-      <th>用户名</th>
-      <th colspan="2">操作</th>
-    </tr>
-    <% @users.each do |user| %>
-    <tr>
-      <% if !user.rooms.empty? %>
-      <td><%= user.rooms.first.name %></td>
-      <% else %>
-      <td>暂无班级信息</td>
-      <% end %>
-      <td><%= user.name %></td>
-      <td><%= link_to 'modify', edit_admin_path(user) %></td>
-      <td><%= link_to 'delete', admin_path(user), method: :delete, data: { confirm: '你确定要删除这个用户?' } %></td>
-    </tr>
-    <% end %>
-  </table>
-</div>
+
+<%= link_to '教师管理', admins_show_teachers_path %>
+<%= link_to '学生管理', admins_show_students_path %>
+<%= link_to '班级管理', admins_show_classes_path %>
+<!-- <%= form_tag admins_path, method: :get do %>
+  <%= search_field_tag("q[name_cont]", params["q"] &&               params["q"]["name_cont"],placeholder: "输入用户名称")%>
+<% end %> -->

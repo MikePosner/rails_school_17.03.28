@@ -1,6 +1,6 @@
 
 body {
-  width: 2000px;
+  width: 1840px;
   height:800px;
   font-family: PmingLiu;
   font-size: 28px;
@@ -11,7 +11,7 @@ body {
 }
 
 img{
-  width: 100%;
+  width: 1839px;
   height:450px;
   background-image: url("17331.jpg");
   background-repeat: no-repeat;
@@ -20,13 +20,19 @@ img{
 
 .container{
   color: #4c8dae;
-  width: 700px;
+  width: 400px;
   position: absolute;
   top: 550px;
   left: 650px;
 }
 
+.for input{
+  float: right;
+}
 
+button{
+  width: 100%;
+}
 
 .text{
   width: 650px;
@@ -63,18 +69,6 @@ a{
 
 .right a{
   color: #a1afc9;
-}
-
-tbody{
-  text-align: center;
-}
-
-th{
-  width: 200px;
-}
-
-td{
-  padding-top: 15px;
 }
 
 .hexagon {

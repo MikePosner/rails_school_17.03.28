@@ -39,5 +39,5 @@ class GeneralStudentsController < ApplicationController
     # params.permit(user:[rooms: :room_name])
     params.require(:user).permit(rooms: :name)
   end
-  
+
 end

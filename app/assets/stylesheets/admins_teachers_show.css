@@ -20,13 +20,26 @@ img{
 
 .container{
   color: #4c8dae;
-  width: 700px;
+  width: 600px;
   position: absolute;
   top: 550px;
-  left: 650px;
 }
 
+.container-2{
+  color: #4c8dae;
+  width: 600px;
+  position: absolute;
+  top: 550px;
+  left:700px;
+}
 
+.container-3{
+  color: #4c8dae;
+  width: 600px;
+  position: absolute;
+  top: 550px;
+  left:1200px;
+}
 
 .text{
   width: 650px;

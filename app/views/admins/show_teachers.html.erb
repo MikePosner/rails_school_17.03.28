@@ -1,0 +1,45 @@
+<%= image_tag "17331.jpg" %>
+<div class="text">
+  <h3>Administrator operation platform</h3>
+  <p>Here you can find all the teachers and students information, and its management</p>
+</div>
+  <%= stylesheet_link_tag "admins_show" %>
+<div class="right">
+  当前登录用户:<%= @user.name %>
+  <%= link_to '新建用户', :applicants_new  %>
+  <%= link_to '退出当前登录', root_path  %>
+</div>
+<div class="hexagon icon"></div>
+<div class="hexagon icon"></div>
+<div class="hexagon icon"></div>
+
+<div class="container">
+
+  <%= search_form_for @q,:url => admins_show_teachers_path do |f| %>
+    name:<%= f.search_field :name_cont %>
+    room:<%= select "room","id", Room.all.map{|r| [r.name,r.id]},{:include_blank => true } %>
+    <%= f.submit '搜索'%>
+  <% end %>
+
+  <table>
+    <tr>
+      <th>班级</th>
+      <th>教师姓名</th>
+      <th colspan="2">操作</th>
+    </tr>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <% if !teacher.rooms.empty? %>
+          <td><%= teacher.rooms.first.name %></td>
+        <% else %>
+          <td>暂无班级信息</td>
+        <% end %>
+        <td><%= teacher.name %></td>
+        <td><%= link_to 'modify', edit_admin_path(teacher) %></td>
+        <td>
+          <%= link_to 'delete', admin_path(teacher), method: :delete, data: { confirm: '你确定要删除这个用户?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

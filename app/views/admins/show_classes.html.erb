@@ -1,0 +1,37 @@
+<%= image_tag "17331.jpg" %>
+<div class="text">
+  <h3>Administrator operation platform</h3>
+  <p>Here you can find all the teachers and students information, and its management</p>
+</div>
+<%= stylesheet_link_tag "admins_show" %>
+<div class="right">
+  当前登录用户:<%= @user.name %>
+  <%= link_to '新建用户', :applicants_new  %>
+  <%= link_to '退出当前登录', root_path  %>
+</div>
+<div class="hexagon icon"></div>
+<div class="hexagon icon"></div>
+<div class="hexagon icon"></div>
+
+
+<div class="container">
+
+  <%= search_form_for @q,:url => admins_show_classes_path do |f| %>
+    class:<%= f.search_field :name_cont %>
+    <%= f.submit '搜索'%>
+  <% end %>
+
+  <table>
+    <tr>
+      <th>班级列表</th>
+      <th colspan="2">操作</th>
+    </tr>
+    <% @rooms.each do |room| %>
+    <tr>
+      <td><%= room.name %></td>
+      <td><%= link_to 'modify', edit_room_path(room) %></td>
+      <td><%= link_to 'delete', room_path(room), method: :delete, data: { confirm: '你确定要删除这个班级?' } %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

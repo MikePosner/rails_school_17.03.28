@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "admins_edit" %>
+<%= stylesheet_link_tag "rooms_edit" %>
 <%= image_tag "17331.jpg" %>
 <div class="text">
   <h3>Administrator operation platform</h3>
@@ -11,17 +11,18 @@
 <div class="hexagon icon"></div>
 <div class="hexagon icon"></div>
 <div class="container">
-  <%= form_for @user, url:admin_path do |f| %>
+  <%= form_for @room, url:room_path do |f| %>
   <div class="for">
     <p>
-      <%= f.label :user %>
+      <%= f.label :class %>
       <%= f.text_field :name %>
     </p>
-    <p>
-      class
-      <%= select "room", "room_id", Room.all.map{|r| [r.name,r.id]},{:include_blank => true } %>
-
-    </p>
+    <!-- <p>
+      <%= f.fields_for :rooms do |r| %>
+        <%= r.label :class %>
+        <%= r.text_field :name %>
+      <% end %>
+    </p> -->
   </div>
   <%= f.button "提交" %>
 
